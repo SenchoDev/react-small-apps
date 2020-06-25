@@ -36,6 +36,7 @@ function App() {
     toggleTodo({variables: { id: id, done: done, }})
   }
 
+  
   if (loading) return <div>Loading todos...</div>;
   if (error) return <div>Error fetching todos</div>;
   return (
