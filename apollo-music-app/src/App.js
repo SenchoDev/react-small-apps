@@ -4,13 +4,29 @@ import AddSong from "./components/AddSong";
 import SongList from "./components/SongList";
 import SongPlayer from "./components/SongPlayer";
 import { Grid, useMediaQuery, Hidden } from "@material-ui/core";
+import songReducer from './reducer'
+
+export const SongContext = React.createContext({
+  song: {
+    id: "c59af37e-7cde-4df5-af1e-e577466abca8",
+    title: "Bye, Bye",
+    artist: "Raf Camora",
+    thumbnail: "http://img.youtube.com/vi/ocklz56E0GI/0.jpg",
+    url: "https://youtu.be/ocklz56E0GI?list=RDocklz56E0GI",
+    duration: 224,
+
+  },
+  isPlaying: false,
+})
 
 function App() {
+  const initalSongState = React.useContext(SongContext);
+  const [state, dispatch] = React.useReducer(() => songReducer, initalSongState);
   const greaterThanSm = useMediaQuery(theme => theme.breakpoints.up("sm"));
   const greaterThanMd = useMediaQuery(theme => theme.breakpoints.up("md"));
 
   return (
-    <>
+    <SongContext.Provider value={{state, dispatch}}>
       <Hidden only="xs">
         <Header />
       </Hidden>
@@ -49,7 +65,7 @@ function App() {
           <SongPlayer />
         </Grid>
       </Grid>
-    </>
+    </SongContext.Provider>
   );
 }
 

@@ -10,11 +10,11 @@ import {
   makeStyles
 } from "@material-ui/core";
 import { PlayArrow, Save } from "@material-ui/icons";
-import { GET_SONGS } from '../graphql/queries'
-import { useQuery } from "@apollo/react-hooks";
+import { GET_SONGS } from '../graphql/subscriptions'
+import { useSubscription } from "@apollo/react-hooks";
 
 function SongList() {
-  const { data, loading, error} = useQuery(GET_SONGS);
+  const { data, loading, error} = useSubscription(GET_SONGS);
 
   if (loading) {
     return (
