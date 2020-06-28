@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, makeStyles} from '@material-ui/core';
+import React from "react";
+import { AppBar, Toolbar, Typography, makeStyles } from "@material-ui/core";
 import { HeadsetTwoTone } from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
@@ -8,19 +8,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
-function Header(){
+function Header() {
   const classes = useStyles();
 
   return (
-    <AppBar color="primary" position='fixed'>
+    <AppBar color="primary" position="fixed">
       <Toolbar>
-        <HeadsetTwoTone/>
+        <HeadsetTwoTone />
         <Typography className={classes.title} variant="h6" component="h1">
           Apollo Music Share
         </Typography>
       </Toolbar>
     </AppBar>
-  )
+  );
 }
+
 export default Header;

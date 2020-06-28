@@ -5,8 +5,8 @@ export const GET_SONGS = gql`
     songs(order_by: { created_at: desc }) {
       artist
       duration
-      thumbnail
       id
+      thumbnail
       title
       url
     }
