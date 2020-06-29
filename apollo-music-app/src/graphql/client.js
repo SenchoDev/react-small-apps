@@ -1,10 +1,3 @@
-// import ApolloClient from 'apollo-boost';
-
-// const client = new ApolloClient({
-//   uri: 'https://apollo-share-music.herokuapp.com/v1/graphql'
-// })
-
-// export default client
 import ApolloClient from "apollo-client";
 import { WebSocketLink } from "apollo-link-ws";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -76,6 +69,9 @@ const hasQueue = Boolean(localStorage.getItem("queue"));
 const data = {
   queue: hasQueue ? JSON.parse(localStorage.getItem("queue")) : []
 };
+// const client = new ApolloClient({
+//   uri: "https://apollo-music-share.herokuapp.com/v1/graphql"
+// });
 client.writeData({ data });
 
 export default client;
