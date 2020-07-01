@@ -7,7 +7,7 @@ import { GET_QUEUED_SONGS } from "./queries";
 
 const client = new ApolloClient({
   link: new WebSocketLink({
-    uri: "wss://apollo-music-share.herokuapp.com/v1/graphql",
+    uri: "wss://apollo-share-music.herokuapp.com/v1/graphql",
     options: {
       reconnect: true
     }
@@ -46,6 +46,7 @@ const client = new ApolloClient({
         const queryResult = cache.readQuery({
           query: GET_QUEUED_SONGS
         });
+        
         if (queryResult) {
           const { queue } = queryResult;
           const isInQueue = queue.some(song => song.id === input.id);
