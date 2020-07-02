@@ -8,6 +8,6 @@
 ## Learned
 
 1. Apollo client (managing local data)
-2. Apollo with graphql connect to HASURA Postgres database
+2. Apollo with graphql connected to HASURA Postgres database
 3. Learned how to make CRUD apps
 4. React-Player & Material-UI
